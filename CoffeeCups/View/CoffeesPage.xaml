@@ -54,7 +54,7 @@
                                    AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
                                    BackgroundColor="#90000000">
             <ActivityIndicator IsRunning="{Binding IsBusy}" Color="#3CB9A8"/>
-            <Label Text="{Binding Message}" HorizontalOptions="Center" TextColor = "White" Style="{DynamicResource EvolveListItemTextStyle}"/>
+            <Label Text="{Binding LoadingMessage}" HorizontalOptions="Center" TextColor = "White" Style="{DynamicResource ListItemTextStyle}"/>
        </StackLayout>
     </AbsoluteLayout>
 </ContentPage>

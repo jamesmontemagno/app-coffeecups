@@ -19,7 +19,7 @@ namespace CoffeeCups
                     ListViewCoffees.SelectedItem = null;
             };
 
-            if (Device.OS != TargetPlatform.iOS && Device.OS == TargetPlatform.Android)
+            if (Device.OS != TargetPlatform.iOS && Device.OS != TargetPlatform.Android)
             {
                 ToolbarItems.Add(new ToolbarItem
                 {

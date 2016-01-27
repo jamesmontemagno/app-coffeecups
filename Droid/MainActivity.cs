@@ -14,8 +14,9 @@ namespace CoffeeCups.Droid
 
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
-			Xamarin.Insights.Initialize (XamarinInsights.ApiKey, this);
-			base.OnCreate (bundle);
+            Xamarin.Insights.Initialize ("4c9b7ee70e74ac06196f21599c67983461959028", this);
+            Xamarin.Insights.ForceDataTransmission = true;
+            base.OnCreate (bundle);
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
             FormsToolkit.Droid.Toolkit.Init();

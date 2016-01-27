@@ -9,7 +9,6 @@
     <RootNamespace>CoffeeCups.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>CoffeeCups.iOS</AssemblyName>
-    <XamarinInsightsApiKey>4c9b7ee70e74ac06196f21599c67983461959028</XamarinInsightsApiKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

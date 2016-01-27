@@ -6,7 +6,7 @@ Sample application built with Xamarin.Forms for iOS, Android, and Windows 10 UWP
 ## Walkthrough:
 * Backend Setup: https://www.youtube.com/watch?v=Bi2TxyiK9wM
 * Blog: Soon
-* Video Demo: Soon
+* Video Demo: https://www.youtube.com/watch?v=r3tUKefwfy0
 
 ## Screenshots
 ![](Art/apps.png)

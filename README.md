@@ -9,7 +9,7 @@ Sample application built with Xamarin.Forms for iOS, Android, and Windows 10 UWP
 * Video Demo: Soon
 
 ## Screenshots
-* Soon
+![](Art/apps.png)
 
 
 #### Contributors

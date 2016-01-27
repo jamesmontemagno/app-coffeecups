@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:CoffeeCups;assembly=CoffeeCups"
+    x:Class="CoffeeCups.CoffeesPage"
+    Title="Coffee Consumption">
+     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid AbsoluteLayout.LayoutFlags="All" 
+              AbsoluteLayout.LayoutBounds="0,0,1,1"
+              RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" Padding="16" Spacing="16" BackgroundColor="#F2C500">
+                <Label FontSize="Medium" Text="Made at Home?"
+                        TextColor="White" 
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Start"/>
+                <Switch IsToggled="{Binding AtHome}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <Button Text="Add Coffee" 
+                        Command="{Binding AddCoffeeCommand}" 
+                        IsEnabled="{Binding IsNotBusy}" 
+                        VerticalOptions="Center"
+                        TextColor="White"
+                        BackgroundColor="#F2C500"/>
+            </StackLayout>
+            <ListView 
+                Grid.Row="1"
+                GroupDisplayBinding="{Binding Key}"
+                IsGroupingEnabled="true"
+                HasUnevenRows ="false"
+                ItemsSource="{Binding CoffeesGrouped}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding LoadCoffeesCommand}"
+                x:Name="ListViewCoffees">
+             <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:MyTextCell Text="{Binding TimeDisplay}"
+                              Detail="{Binding AtHomeDisplay}"/>
+                </DataTemplate>
+             </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Grid.Row="2" x:Name="OfflineStack" Padding="8" IsVisible="false">
+                <Label TextColor="White" Text="No Connection - Offline Mode" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+            <StackLayout IsVisible="{Binding IsBusy}"
+                         Padding="32"
+                                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                                   BackgroundColor="#90000000">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="#3CB9A8"/>
+            <Label Text="{Binding Message}" HorizontalOptions="Center" TextColor = "White" Style="{DynamicResource EvolveListItemTextStyle}"/>
+       </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

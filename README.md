@@ -21,7 +21,7 @@ Sample application built with Xamarin.Forms for iOS, Android, and Windows 10 UWP
 * [Connectivity Plugin](http://github.com/jamesmontemagno/Xamarin.Plugins)
 * [Azure Mobile Apps](https://components.xamarin.com/view/azure-mobile-client)
 * [MvvmHelpers](https://github.com/jamesmontemagno/mvvm-helpers)
-* [Xamarin.Forms](Toolkit https://github.com/jamesmontemagno/xamarin.forms-toolkit)
+* [Xamarin.Forms Toolkit](https://github.com/jamesmontemagno/xamarin.forms-toolkit)
 
 #### License
 Under MIT (See LICENSE.md)

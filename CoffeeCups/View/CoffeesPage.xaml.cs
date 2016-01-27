@@ -13,7 +13,11 @@ namespace CoffeeCups
         {
             InitializeComponent();
             BindingContext = vm = new CoffeesViewModel();
-            ListViewCoffees.ItemTapped += (sender, e) => ListViewCoffees.SelectedItem = null;;
+            ListViewCoffees.ItemTapped += (sender, e) =>
+            {
+                if(Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
+                    ListViewCoffees.SelectedItem = null;
+            };
         }
 
         protected override void OnAppearing()

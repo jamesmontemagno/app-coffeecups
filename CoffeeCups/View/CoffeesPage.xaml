@@ -15,10 +15,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackLayout Orientation="Horizontal" Padding="16" Spacing="16" BackgroundColor="#F2C500">
-                <Label FontSize="Medium" Text="Made at Home?"
+                <Label Text="Made at Home?"
                         TextColor="White" 
                         VerticalOptions="Center" 
-                        HorizontalOptions="Start"/>
+                        HorizontalOptions="Start">
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" Default="10"/>
+                    </Label.FontSize>
+                </Label>
                 <Switch IsToggled="{Binding AtHome}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                 <Button Text="Add Coffee" 
                         Command="{Binding AddCoffeeCommand}" 
@@ -39,12 +43,20 @@
                 x:Name="ListViewCoffees">
              <ListView.ItemTemplate>
                 <DataTemplate>
-                    <local:MyTextCell Text="{Binding TimeDisplay}"
-                              Detail="{Binding AtHomeDisplay}"/>
+                    <ViewCell>
+                        <Grid Padding="16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding TimeDisplay}" FontSize="16" Style="{DynamicResource ListItemTextStyle}" VerticalTextAlignment="Center"/>
+                            <Label Grid.Column="1" HorizontalOptions="End" FontSize="16" Text="{Binding AtHomeDisplay}" Style="{DynamicResource ListItemTextStyle}" TextColor="#979797" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
              </ListView.ItemTemplate>
             </ListView>
-            <StackLayout Grid.Row="2" x:Name="OfflineStack" Padding="8" IsVisible="false">
+            <StackLayout Grid.Row="2" x:Name="OfflineStack" Padding="8" IsVisible="false" BackgroundColor="#F2C500">
                 <Label TextColor="White" Text="No Connection - Offline Mode" HorizontalOptions="Center" VerticalOptions="Center"/>
             </StackLayout>
         </Grid>

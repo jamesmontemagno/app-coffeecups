@@ -18,14 +18,25 @@ namespace CoffeeCups
                 if(Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
                     ListViewCoffees.SelectedItem = null;
             };
+
+            if (Device.OS != TargetPlatform.iOS && Device.OS == TargetPlatform.Android)
+            {
+                ToolbarItems.Add(new ToolbarItem
+                {
+                    Text ="Refresh",
+                    Command=vm.LoadCoffeesCommand
+                });
+            }
+
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-             CrossConnectivity.Current.ConnectivityChanged += ConnecitvityChanged;
-            OfflineStack.IsVisible = !CrossConnectivity.Current.IsConnected;
+            CrossConnectivity.Current.ConnectivityChanged += ConnecitvityChanged;
+            //OfflineStack.IsVisible = !CrossConnectivity.Current.IsConnected;
             if (vm.Coffees.Count == 0)
                 vm.LoadCoffeesCommand.Execute(null);
         }

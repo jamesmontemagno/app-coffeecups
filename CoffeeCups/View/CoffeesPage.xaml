@@ -21,7 +21,7 @@
                         HorizontalOptions="Start"
                         FontSize="16">
                     <Label.FontSize>
-                        <OnPlatform x:TypeArguments="x:Double" iOS="16" Android="16" WinPhone="10" />
+                        <OnPlatform x:TypeArguments="x:Double" iOS="16" Android="16" WinPhone="12" />
                     </Label.FontSize>
                 </Label>
                 <Switch IsToggled="{Binding AtHome}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using System.Diagnostics;
+using Xamarin.Forms;
 
 namespace CoffeeCups
 {
@@ -57,7 +58,8 @@ namespace CoffeeCups
             var coffee = new CupOfCoffee
             {
                     DateUtc = DateTime.UtcNow,
-                    MadeAtHome = atHome
+                    MadeAtHome = atHome,
+                    OS = Device.OS.ToString()
             };
 
             await coffeeTable.InsertAsync(coffee);
@@ -81,7 +83,7 @@ namespace CoffeeCups
             }
             catch(Exception ex)
             {
-                Debug.WriteLine("Unable to sync coffees, that is alright as we have offline capabilities");
+                Debug.WriteLine("Unable to sync coffees, that is alright as we have offline capabilities: " + ex);
             }
 
             time.Stop();

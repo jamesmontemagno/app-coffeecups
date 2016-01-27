@@ -24,6 +24,8 @@ namespace CoffeeCups
         /// <value><c>true</c> if made at home; otherwise, <c>false</c>.</value>
         public bool MadeAtHome{ get; set; }
 
+        public string OS { get; set; }
+
 
         [Newtonsoft.Json.JsonIgnore]
         public string DateDisplay { get { return DateUtc.ToLocalTime().ToString("d"); } }

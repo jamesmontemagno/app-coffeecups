@@ -4,9 +4,9 @@
 Sample application built with Xamarin.Forms for iOS, Android, and Windows 10 UWP showcasing simple data binding and tying into Azure Mobile Apps and Easy Tables. 
 
 ## Walkthrough:
-* Backend Setup:
+* Backend Setup: https://www.youtube.com/watch?v=Bi2TxyiK9wM
 * Blog: Soon
-* Video Demo
+* Video Demo: Soon
 
 ## Screenshots
 * Soon

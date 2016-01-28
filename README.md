@@ -5,7 +5,7 @@ Sample application built with Xamarin.Forms for iOS, Android, and Windows 10 UWP
 
 ## Walkthrough:
 * Backend Setup: https://www.youtube.com/watch?v=Bi2TxyiK9wM
-* Blog: Soon
+* Blog: https://blog.xamarin.com/getting-started-azure-mobile-apps-easy-tables/
 * Video Demo: https://www.youtube.com/watch?v=r3tUKefwfy0
 
 ## Screenshots

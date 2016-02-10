@@ -3,6 +3,8 @@
 ## What is this?
 Sample application built with Xamarin.Forms for iOS, Android, and Windows 10 UWP showcasing simple data binding and tying into Azure Mobile Apps and Easy Tables. 
 
+Built with C# 6 features, you must be running VS 2015 or Xamarin Studio to compile.
+
 ## Walkthrough:
 * Backend Setup: https://www.youtube.com/watch?v=Bi2TxyiK9wM
 * Blog: https://blog.xamarin.com/getting-started-azure-mobile-apps-easy-tables/

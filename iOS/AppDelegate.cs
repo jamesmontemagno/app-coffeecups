@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using FormsToolkit;
+using Xamarin.Forms;
 
 namespace CoffeeCups.iOS
 {
@@ -51,6 +52,16 @@ namespace CoffeeCups.iOS
             UISwitch.Appearance.OnTintColor = tint;
 
             global::Xamarin.Forms.Forms.Init();
+
+            #if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+            //Mapping StyleId to iOS Labels
+            Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
+                if (null != e.View.StyleId) {
+                    e.NativeView.AccessibilityIdentifier = e.View.StyleId;
+                }
+            };
+            #endif
 
             LoadApplication(new App());
 

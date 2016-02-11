@@ -21,6 +21,16 @@ namespace CoffeeCups.Droid
 
             FormsToolkit.Droid.Toolkit.Init();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+
+            #if ENABLE_TEST_CLOUD
+            //Mapping StyleID to element content descriptions
+            Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) => {
+            if (!string.IsNullOrWhiteSpace(e.View.StyleId)) {
+            e.NativeView.ContentDescription = e.View.StyleId;
+            }
+            };
+            #endif
+
 			LoadApplication (new App ());
 		}
 	}

@@ -44,6 +44,9 @@
     <OutputPath>bin\iPhone\UITest</OutputPath>
     <WarningLevel>4</WarningLevel>
     <DefineConstants>ENABLE_TEST_CLOUD</DefineConstants>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
+    <DebugType>full</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

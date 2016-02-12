@@ -30,6 +30,12 @@ namespace CoffeeCups.UITests
         {
             app.Screenshot("First screen.");
         }
+
+        [Test]
+        public void AppLaunches2()
+        {
+            app.Screenshot("Second screen.");
+        }
     }
 }
 

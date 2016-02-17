@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using System.Diagnostics;
 using Xamarin.Forms;
+using CoffeeCups.Helpers;
 
 namespace CoffeeCups
 {
@@ -23,9 +24,23 @@ namespace CoffeeCups
             var time = Xamarin.Insights.TrackTime("InitializeTime");
             time.Start();
             
+
+            var handler = new AuthHandler();
             //Create our client
             MobileService = new MobileServiceClient("https://mycoffeeapp.azurewebsites.net");
+            handler.Client = MobileService;
 
+
+
+
+            if (!string.IsNullOrWhiteSpace (Settings.AuthToken) && !string.IsNullOrWhiteSpace (Settings.UserId)) {
+                MobileService.CurrentUser = new MobileServiceUser (Settings.UserId);
+                MobileService.CurrentUser.MobileServiceAuthenticationToken = Settings.AuthToken;
+            }
+
+            if (handler != null)
+                handler.Client = MobileService;
+            
             const string path = "syncstore.db";
             //setup our local sqlite store and intialize our table
             var store = new MobileServiceSQLiteStore(path);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Plugin.Connectivity;
+using CoffeeCups.Helpers;
 
 namespace CoffeeCups
 {

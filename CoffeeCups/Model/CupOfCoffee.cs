@@ -5,6 +5,11 @@ namespace CoffeeCups
 {
     public class CupOfCoffee
     {
+        /// <summary>
+        /// Gets or sets the user identifier.
+        /// </summary>
+        /// <value>The user identifier.</value>
+        public string UserId {get;set;}
 
         [Newtonsoft.Json.JsonProperty("Id")]
         public string Id { get; set; }
@@ -24,6 +29,10 @@ namespace CoffeeCups
         /// <value><c>true</c> if made at home; otherwise, <c>false</c>.</value>
         public bool MadeAtHome{ get; set; }
 
+        /// <summary>
+        /// Gets or sets the OS of the user
+        /// </summary>
+        /// <value>The OS</value>
         public string OS { get; set; }
 
 

@@ -1742,7 +1742,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -1752,7 +1752,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -1766,7 +1776,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -3605,7 +3615,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -3615,7 +3625,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -3629,7 +3649,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -5440,7 +5460,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -5450,7 +5470,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -5464,7 +5494,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -7308,7 +7338,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -7318,7 +7348,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -7332,7 +7372,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -9143,7 +9183,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -9153,7 +9193,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -9167,7 +9217,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -11011,7 +11061,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -11021,7 +11071,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -11035,7 +11095,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -12846,7 +12906,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Xam.Plugin.Connectivity/2.0.2": {
+      "Xam.Plugin.Connectivity/2.1.1": {
         "compile": {
           "lib/UAP10/Plugin.Connectivity.Abstractions.dll": {},
           "lib/UAP10/Plugin.Connectivity.dll": {}
@@ -12856,7 +12916,17 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6503-pre2": {
+      "Xam.Plugins.Settings/2.1.0": {
+        "compile": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10/Plugin.Settings.Abstractions.dll": {},
+          "lib/UAP10/Plugin.Settings.dll": {}
+        }
+      },
+      "Xamarin.Forms/2.1.0.6513-pre4": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -12870,7 +12940,7 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         }
       },
-      "Xamarin.Insights/1.11.3": {
+      "Xamarin.Insights/1.11.4": {
         "compile": {
           "lib/windows8/Xamarin.Insights.dll": {}
         },
@@ -16619,8 +16689,8 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "Xam.Plugin.Connectivity/2.0.2": {
-      "sha512": "tHsfrpoBops2yr5q+q2R3q49A6W/0hHUByD37ouKg2UvvNq7yvcPk+YS/z2IbjGdjygiBb7Q1CPar1gRP8AYvQ==",
+    "Xam.Plugin.Connectivity/2.1.1": {
+      "sha512": "JzGMPbDADSdvnUgxXJVgpfi3SxKhapNVg4uvgigeGuSuDJKGvHK3YxDFQ88LumnBjiQcK2tTuLgIfO4hb1ODwA==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -16641,12 +16711,12 @@
         "lib/net45/Plugin.Connectivity.dll",
         "lib/net45/Plugin.Connectivity.pdb",
         "lib/net45/Plugin.Connectivity.xml",
-        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Connectivity.Abstractions.dll",
-        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Connectivity.Abstractions.pdb",
-        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Connectivity.Abstractions.xml",
-        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Connectivity.dll",
-        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Connectivity.pdb",
-        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Connectivity.xml",
+        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10/Plugin.Connectivity.Abstractions.dll",
+        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10/Plugin.Connectivity.Abstractions.xml",
+        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10/Plugin.Connectivity.dll",
+        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10/Plugin.Connectivity.pdb",
+        "lib/portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10/Plugin.Connectivity.xml",
         "lib/UAP10/Plugin.Connectivity.Abstractions.dll",
         "lib/UAP10/Plugin.Connectivity.Abstractions.pdb",
         "lib/UAP10/Plugin.Connectivity.Abstractions.xml",
@@ -16681,13 +16751,69 @@
         "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.xml",
         "lib/Xamarin.iOS10/Plugin.Connectivity.dll",
         "lib/Xamarin.iOS10/Plugin.Connectivity.xml",
-        "package/services/metadata/core-properties/11d9fdffb7f44f5484464367f94374f1.psmdcp",
+        "package/services/metadata/core-properties/89d6f784318841ebaf5391c1f4b0833b.psmdcp",
         "readme.txt",
         "Xam.Plugin.Connectivity.nuspec"
       ]
     },
-    "Xamarin.Forms/2.1.0.6503-pre2": {
-      "sha512": "ly3V/AzDAWrviWB0EBmxLSp3ClCz9f6PlvGihjHrBG/pkA6APCWeCIhc3JaY4k30mQgJNWY6AWfZfJ0Nl1ytCQ==",
+    "Xam.Plugins.Settings/2.1.0": {
+      "sha512": "quBuIfhmcYN6V1hZTV7a3ODiNqdT0Zv+U/zQdOSQnLQhVd+U+HojacD4TYm+CzUz9+FxUEDpH8aTXHDRyzdZTg==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "content/MonoAndroid10/Helpers/Settings.cs.pp",
+        "content/MonoTouch10/Helpers/Settings.cs.pp",
+        "content/net45/Helpers/Settings.cs.pp",
+        "content/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Helpers/Settings.cs.pp",
+        "content/UAP10/Helpers/Settings.cs.pp",
+        "content/win8/Helpers/Settings.cs.pp",
+        "content/wp8/Helpers/Settings.cs.pp",
+        "content/wpa81/Helpers/Settings.cs.pp",
+        "content/Xamarin.iOS10/Helpers/Settings.cs.pp",
+        "lib/MonoAndroid10/Plugin.Settings.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Settings.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.Settings.dll",
+        "lib/MonoAndroid10/Plugin.Settings.xml",
+        "lib/MonoTouch10/Plugin.Settings.Abstractions.dll",
+        "lib/MonoTouch10/Plugin.Settings.Abstractions.xml",
+        "lib/MonoTouch10/Plugin.Settings.dll",
+        "lib/MonoTouch10/Plugin.Settings.xml",
+        "lib/net45/Plugin.Settings.Abstractions.dll",
+        "lib/net45/Plugin.Settings.Abstractions.xml",
+        "lib/net45/Plugin.Settings.dll",
+        "lib/net45/Plugin.Settings.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Settings.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Settings.Abstractions.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Settings.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Settings.xml",
+        "lib/UAP10/Plugin.Settings.Abstractions.dll",
+        "lib/UAP10/Plugin.Settings.Abstractions.xml",
+        "lib/UAP10/Plugin.Settings.dll",
+        "lib/UAP10/Plugin.Settings.xml",
+        "lib/win8/Plugin.Settings.Abstractions.dll",
+        "lib/win8/Plugin.Settings.Abstractions.xml",
+        "lib/win8/Plugin.Settings.dll",
+        "lib/win8/Plugin.Settings.xml",
+        "lib/wp8/Plugin.Settings.Abstractions.dll",
+        "lib/wp8/Plugin.Settings.Abstractions.xml",
+        "lib/wp8/Plugin.Settings.dll",
+        "lib/wp8/Plugin.Settings.xml",
+        "lib/wpa81/Plugin.Settings.Abstractions.dll",
+        "lib/wpa81/Plugin.Settings.Abstractions.xml",
+        "lib/wpa81/Plugin.Settings.dll",
+        "lib/wpa81/Plugin.Settings.xml",
+        "lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Settings.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.Settings.dll",
+        "lib/Xamarin.iOS10/Plugin.Settings.xml",
+        "package/services/metadata/core-properties/3c2cb09296c149ffbdff68835acf8f53.psmdcp",
+        "readme.txt",
+        "Xam.Plugins.Settings.nuspec"
+      ]
+    },
+    "Xamarin.Forms/2.1.0.6513-pre4": {
+      "sha512": "Epb0fiDZKAFZ+Bz0IVsvDUn3uAo/x14Fdyg+3YsGjUZ/LR6srBfq8Z5o/M11h/f95V66WwDKgf3DSHQBiGdy4A==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -16780,15 +16906,15 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
-        "package/services/metadata/core-properties/154637a73554416d924b2a2e52509bab.psmdcp",
+        "package/services/metadata/core-properties/a76e8e4137e4415fb19f7210b69fbd5b.psmdcp",
         "tools/init.ps1",
         "tools/Xamarin.Forms.Core.Design.dll",
         "tools/Xamarin.Forms.Xaml.Design.dll",
         "Xamarin.Forms.nuspec"
       ]
     },
-    "Xamarin.Insights/1.11.3": {
-      "sha512": "ewZ3dXcGONrMmPI22grN91ndL/UtuuQnKllMTFlgz+9WRK2q4i7ELegzV/qJtQ2cESKPgZ7qOE5CfRSlF9rtog==",
+    "Xamarin.Insights/1.11.4": {
+      "sha512": "7O4GGdIsIwFFx84m4hLhXOMJJfIrOPZlfj/jUF1gQc13a08OQKCJjZRgybseHbtgO2xLRuwk6wxUcQQBhRQmlg==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -16831,7 +16957,7 @@
         "lib/Xamarin.iOS10/Xamarin.Insights.XML",
         "lib/Xamarin.Mac20/Xamarin.Insights.dll",
         "lib/Xamarin.Mac20/Xamarin.Insights.XML",
-        "package/services/metadata/core-properties/227e4d45b85c4456ab9e04ca94981ecd.psmdcp",
+        "package/services/metadata/core-properties/856ef0cb27714afa8bc93399f487e858.psmdcp",
         "Xamarin.Insights.nuspec"
       ]
     }
@@ -16844,9 +16970,10 @@
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "Newtonsoft.Json >= 8.0.2",
       "Refractored.MvvmHelpers >= 1.0.1",
-      "Xam.Plugin.Connectivity >= 2.0.2",
-      "Xamarin.Forms >= 2.1.0.6503-pre2",
-      "Xamarin.Insights >= 1.11.3"
+      "Xam.Plugin.Connectivity >= 2.1.1",
+      "Xam.Plugins.Settings >= 2.1.0",
+      "Xamarin.Forms >= 2.1.0.6513-pre4",
+      "Xamarin.Insights >= 1.11.4"
     ],
     "UAP,Version=v10.0": []
   }

@@ -9,6 +9,7 @@ namespace CoffeeCups
         /// Gets or sets the user identifier.
         /// </summary>
         /// <value>The user identifier.</value>
+        [Newtonsoft.Json.JsonProperty("userId")]
         public string UserId {get;set;}
 
         [Newtonsoft.Json.JsonProperty("Id")]

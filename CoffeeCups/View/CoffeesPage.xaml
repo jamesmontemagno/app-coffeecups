@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CoffeeCups;assembly=CoffeeCups"
     x:Class="CoffeeCups.CoffeesPage"
-    Title="Coffee Consumption">
+    Title="Cups Of Coffee">
      <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid AbsoluteLayout.LayoutFlags="All" 
               AbsoluteLayout.LayoutBounds="0,0,1,1"

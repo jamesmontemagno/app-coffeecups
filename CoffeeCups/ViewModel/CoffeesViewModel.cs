@@ -107,6 +107,11 @@ namespace CoffeeCups
                     var user = await DependencyService.Get<IAuthentication>().LoginAsync(azureService.MobileService, MobileServiceAuthenticationProvider.MicrosoftAccount);
                     if(user == null)
                         return;
+
+                    var coffees = await azureService.GetCoffees();
+                    Coffees.ReplaceRange(coffees);
+
+                    SortCoffees();
                 }
                 LoadingMessage = "Adding Coffee...";
                 IsBusy = true;

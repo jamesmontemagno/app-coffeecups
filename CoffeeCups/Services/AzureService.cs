@@ -27,19 +27,13 @@ namespace CoffeeCups
 
             var handler = new AuthHandler();
             //Create our client
-            MobileService = new MobileServiceClient("https://mycoffeeapp.azurewebsites.net");
+            MobileService = new MobileServiceClient("https://mycoffeeapp.azurewebsites.net", handler);
             handler.Client = MobileService;
-
-
-
 
             if (!string.IsNullOrWhiteSpace (Settings.AuthToken) && !string.IsNullOrWhiteSpace (Settings.UserId)) {
                 MobileService.CurrentUser = new MobileServiceUser (Settings.UserId);
                 MobileService.CurrentUser.MobileServiceAuthenticationToken = Settings.AuthToken;
             }
-
-            if (handler != null)
-                handler.Client = MobileService;
             
             const string path = "syncstore.db";
             //setup our local sqlite store and intialize our table

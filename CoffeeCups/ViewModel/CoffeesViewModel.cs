@@ -35,12 +35,21 @@ namespace CoffeeCups
 
         async Task ExecuteLoadCoffeesCommandAsync()
         {
-            if(IsBusy || !Settings.IsLoggedIn)
+            if(IsBusy)
                 return;
 
 
             try 
             {
+
+                if(!Settings.IsLoggedIn)
+                {
+                    await azureService.Initialize();
+                    var user = await DependencyService.Get<IAuthentication>().LoginAsync(azureService.MobileService, MobileServiceAuthenticationProvider.MicrosoftAccount);
+                    if(user == null)
+                        return;
+                }
+
                 
                 LoadingMessage = "Loading Coffees...";
                 IsBusy = true;
@@ -101,20 +110,26 @@ namespace CoffeeCups
             try 
             {
 
-                if(!Settings.IsLoggedIn)
+                if (!Settings.IsLoggedIn)
                 {
                     await azureService.Initialize();
                     var user = await DependencyService.Get<IAuthentication>().LoginAsync(azureService.MobileService, MobileServiceAuthenticationProvider.MicrosoftAccount);
-                    if(user == null)
+                    if (user == null)
                         return;
+
+                    LoadingMessage = "Adding Coffee...";
+                    IsBusy = true;
 
                     var coffees = await azureService.GetCoffees();
                     Coffees.ReplaceRange(coffees);
 
                     SortCoffees();
                 }
-                LoadingMessage = "Adding Coffee...";
-                IsBusy = true;
+                else
+                {
+                    LoadingMessage = "Adding Coffee...";
+                    IsBusy = true;
+                }
                 Xamarin.Insights.Track("CoffeeAdded");
 
                 var coffee = await azureService.AddCoffee(AtHome);

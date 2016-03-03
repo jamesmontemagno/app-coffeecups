@@ -6,6 +6,8 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using FormsToolkit;
 using System.Linq;
+using CoffeeCups.Helpers;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace CoffeeCups
 {
@@ -33,12 +35,13 @@ namespace CoffeeCups
 
         async Task ExecuteLoadCoffeesCommandAsync()
         {
-            if(IsBusy)
+            if(IsBusy || !Settings.IsLoggedIn)
                 return;
 
 
             try 
             {
+                
                 LoadingMessage = "Loading Coffees...";
                 IsBusy = true;
                 var coffees = await azureService.GetCoffees();
@@ -97,6 +100,19 @@ namespace CoffeeCups
 
             try 
             {
+
+                if(!Settings.IsLoggedIn)
+                {
+                    await azureService.Initialize();
+                    var user = await DependencyService.Get<IAuthentication>().LoginAsync(azureService.MobileService, MobileServiceAuthenticationProvider.MicrosoftAccount);
+                    if(user == null)
+                        return;
+
+                    var coffees = await azureService.GetCoffees();
+                    Coffees.ReplaceRange(coffees);
+
+                    SortCoffees();
+                }
                 LoadingMessage = "Adding Coffee...";
                 IsBusy = true;
                 Xamarin.Insights.Track("CoffeeAdded");

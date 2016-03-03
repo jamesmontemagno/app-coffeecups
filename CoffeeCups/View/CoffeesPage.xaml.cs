@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Plugin.Connectivity;
+using CoffeeCups.Helpers;
 
 namespace CoffeeCups
 {
@@ -36,7 +37,7 @@ namespace CoffeeCups
             base.OnAppearing();
 
             CrossConnectivity.Current.ConnectivityChanged += ConnecitvityChanged;
-            //OfflineStack.IsVisible = !CrossConnectivity.Current.IsConnected;
+            OfflineStack.IsVisible = !CrossConnectivity.Current.IsConnected;
             if (vm.Coffees.Count == 0)
                 vm.LoadCoffeesCommand.Execute(null);
         }

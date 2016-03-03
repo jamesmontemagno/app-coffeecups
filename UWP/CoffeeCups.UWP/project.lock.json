@@ -1762,7 +1762,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -3635,7 +3635,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -5480,7 +5480,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -7358,7 +7358,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -9203,7 +9203,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -11081,7 +11081,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -12926,7 +12926,7 @@
           "lib/UAP10/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.1.0.6513-pre4": {
+      "Xamarin.Forms/2.1.0.6524": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
@@ -16812,8 +16812,8 @@
         "Xam.Plugins.Settings.nuspec"
       ]
     },
-    "Xamarin.Forms/2.1.0.6513-pre4": {
-      "sha512": "Epb0fiDZKAFZ+Bz0IVsvDUn3uAo/x14Fdyg+3YsGjUZ/LR6srBfq8Z5o/M11h/f95V66WwDKgf3DSHQBiGdy4A==",
+    "Xamarin.Forms/2.1.0.6524": {
+      "sha512": "UYnoE4uhS6L4kyoe0Ew4sP1Q2Az5/OQZTrFY68Cl8t71lIqNFruu0susybVbr02cHbijD8SnAEYPRrfki9Ot5Q==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -16906,7 +16906,7 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
-        "package/services/metadata/core-properties/a76e8e4137e4415fb19f7210b69fbd5b.psmdcp",
+        "package/services/metadata/core-properties/585da3ac5ba34d7dbceda6e37657ee0b.psmdcp",
         "tools/init.ps1",
         "tools/Xamarin.Forms.Core.Design.dll",
         "tools/Xamarin.Forms.Xaml.Design.dll",
@@ -16972,7 +16972,7 @@
       "Refractored.MvvmHelpers >= 1.0.1",
       "Xam.Plugin.Connectivity >= 2.1.1",
       "Xam.Plugins.Settings >= 2.1.0",
-      "Xamarin.Forms >= 2.1.0.6513-pre4",
+      "Xamarin.Forms >= 2.1.0.6524",
       "Xamarin.Insights >= 1.11.4"
     ],
     "UAP,Version=v10.0": []

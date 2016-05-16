@@ -42,6 +42,10 @@ namespace CoffeeCups
         {
             // Handle when your app resumes
         }
+
+        public static Action<string> OnFacebookAuthSuccess;
+        public static Action OnFacebookAuthFailed;
+
     }
 }
 

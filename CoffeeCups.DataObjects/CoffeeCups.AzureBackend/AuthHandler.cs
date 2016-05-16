@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
 using System.Text;
-using CoffeeCups.Helpers;
+using CoffeeCups.Utils;
 
 namespace CoffeeCups
 {

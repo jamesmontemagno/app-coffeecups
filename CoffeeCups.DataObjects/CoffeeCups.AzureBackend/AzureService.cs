@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using System.Diagnostics;
-using Xamarin.Forms;
-using CoffeeCups.Helpers;
+using CoffeeCups.Utils;
+using CoffeeCups.DataObjects;
 
 namespace CoffeeCups
 {
-    public class AzureService
+    public class AzureService : IDataService
     {
         public MobileServiceClient MobileService { get; set; }
         IMobileServiceSyncTable<CupOfCoffee> coffeeTable;
 
         bool isInitialized;
-        public async Task Initialize()
+        public async Task InitializeAsync()
         {
             if (isInitialized)
                 return;
@@ -47,34 +47,34 @@ namespace CoffeeCups
             isInitialized = true;
         }
 
-        public async Task<IEnumerable<CupOfCoffee>> GetCoffees()
+        public async Task<IEnumerable<CupOfCoffee>> GetAllCoffeeAsync()
         {
-            await Initialize();
-            await SyncCoffee();
+            await InitializeAsync();
+            await SyncCoffeeAsync();
             return await coffeeTable.OrderBy(c => c.DateUtc).ToEnumerableAsync();
         }
 
-        public async Task<CupOfCoffee> AddCoffee(bool atHome)
+        public async Task<CupOfCoffee> AddCoffeeAsync(bool atHome, string os)
         {
-            await Initialize();
+            await InitializeAsync();
 
             //create and insert coffee
             var coffee = new CupOfCoffee
             {
                     DateUtc = DateTime.UtcNow,
                     MadeAtHome = atHome,
-                    OS = Device.OS.ToString()
+                    OS = os
             };
 
             await coffeeTable.InsertAsync(coffee);
 
             //Synchronize coffee
-            await SyncCoffee();
+            await SyncCoffeeAsync();
 
             return coffee;
         }
 
-        public async Task SyncCoffee()
+        public async Task SyncCoffeeAsync()
         {
             try
             {
@@ -87,6 +87,10 @@ namespace CoffeeCups
                 Debug.WriteLine("Unable to sync coffees, that is alright as we have offline capabilities: " + ex);
             }
         }
+
+        public bool NeedsAuthentication => true;
+
+        public AuthProvider AuthProvider => AuthProvider.Microsoft;
     }
 }
     

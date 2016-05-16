@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Plugin.Connectivity;
-using CoffeeCups.Helpers;
+using CoffeeCups.Utils;
 
 namespace CoffeeCups
 {
@@ -29,7 +29,14 @@ namespace CoffeeCups
                 });
             }
 
-
+            ToolbarItems.Add(new ToolbarItem
+            {
+                Text = "Fav",
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new FavoriteCoffeePage());
+                })
+            });
         }
 
         protected override void OnAppearing()

@@ -6,17 +6,18 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using FormsToolkit;
 using System.Linq;
-using CoffeeCups.Helpers;
-using Microsoft.WindowsAzure.MobileServices;
+using CoffeeCups.Utils;
+using CoffeeCups.DataObjects;
 
 namespace CoffeeCups
 {
     public class CoffeesViewModel : BaseViewModel
     {
-        AzureService azureService;
+        IDataService coffeeService;
         public CoffeesViewModel()
         {
-            azureService = new AzureService();
+
+            coffeeService = new AWSBackend.AWSService();
         }
            
         public ObservableRangeCollection<CupOfCoffee> Coffees { get; } = new ObservableRangeCollection<CupOfCoffee>();
@@ -38,28 +39,20 @@ namespace CoffeeCups
             if(IsBusy)
                 return;
 
-
             try 
             {
-
-                if(!Settings.IsLoggedIn)
+                if(!Settings.IsLoggedIn && coffeeService.NeedsAuthentication)
                 {
-                    await azureService.Initialize();
-                    var user = await DependencyService.Get<IAuthentication>().LoginAsync(azureService.MobileService, MobileServiceAuthenticationProvider.MicrosoftAccount);
-                    if(user == null)
-                        return;
+                    await coffeeService.InitializeAsync();
+                    await DependencyService.Get<IAuthentication>().LoginAsync(coffeeService);
                 }
-
                 
                 LoadingMessage = "Loading Coffees...";
                 IsBusy = true;
-                var coffees = await azureService.GetCoffees();
+                var coffees = await coffeeService.GetAllCoffeeAsync();
                 Coffees.ReplaceRange(coffees);
 
-
                 SortCoffees();
-
-
             }
             catch (Exception ex) 
             {
@@ -75,8 +68,6 @@ namespace CoffeeCups
             {
                 IsBusy = false;
             }
-
-
         }
 
         void SortCoffees()
@@ -110,17 +101,18 @@ namespace CoffeeCups
             try 
             {
 
-                if (!Settings.IsLoggedIn)
+                if (!Settings.IsLoggedIn && coffeeService.NeedsAuthentication)
                 {
-                    await azureService.Initialize();
-                    var user = await DependencyService.Get<IAuthentication>().LoginAsync(azureService.MobileService, MobileServiceAuthenticationProvider.MicrosoftAccount);
+                    await coffeeService.InitializeAsync();
+
+                    var user = await DependencyService.Get<IAuthentication>().LoginAsync(coffeeService);
                     if (user == null)
                         return;
 
                     LoadingMessage = "Adding Coffee...";
                     IsBusy = true;
 
-                    var coffees = await azureService.GetCoffees();
+                    var coffees = await coffeeService.GetAllCoffeeAsync();
                     Coffees.ReplaceRange(coffees);
 
                     SortCoffees();
@@ -131,7 +123,7 @@ namespace CoffeeCups
                     IsBusy = true;
                 }
 
-                var coffee = await azureService.AddCoffee(AtHome);
+                var coffee = await coffeeService.AddCoffeeAsync(AtHome, Device.OS.ToString());
                 Coffees.Add(coffee);
                 SortCoffees();
             }

@@ -1,20 +1,24 @@
 ﻿using System;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
-using CoffeeCups.Helpers;
 using Foundation;
 using Xamarin.Forms;
 using CoffeeCups.iOS;
+using CoffeeCups.Utils;
+using System.Collections.Generic;
+using Facebook.LoginKit;
 
-[assembly:Dependency(typeof(Authentication))]
+[assembly:Dependency(typeof(AzureAuthentication))]
 namespace CoffeeCups.iOS
 {
-    public class Authentication : IAuthentication
+    public class AzureAuthentication : IAuthentication
     {
-        public async Task<MobileServiceUser> LoginAsync(MobileServiceClient client, MobileServiceAuthenticationProvider provider)
+        public async Task<bool> LoginAsync(IDataService dataService)
         {
             try
             {
+                var client = (dataService as AzureService).MobileService;
+
                 var window = UIKit.UIApplication.SharedApplication.KeyWindow;
                 var root = window.RootViewController;
                 if(root != null)
@@ -28,12 +32,12 @@ namespace CoffeeCups.iOS
 
                     Settings.LoginAttempts++;
 
-                    var user = await client.LoginAsync(current, provider);
+                    var user = await client.LoginAsync(current, MobileServiceAuthenticationProvider.MicrosoftAccount);
 
                     Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
                     Settings.UserId = user?.UserId ?? string.Empty;
 
-                    return user;
+                    return true;
                 }
             }
             catch(Exception e)
@@ -41,7 +45,7 @@ namespace CoffeeCups.iOS
                 e.Data["method"] = "LoginAsync";
             }
 
-            return null;
+            return false;
         }
 
         public void ClearCookies()

@@ -1,7 +1,7 @@
 ﻿using System;
 using Humanizer;
 
-namespace CoffeeCups
+namespace CoffeeCups.DataObjects
 {
     public class CupOfCoffee
     {
@@ -14,9 +14,6 @@ namespace CoffeeCups
 
         [Newtonsoft.Json.JsonProperty("Id")]
         public string Id { get; set; }
-
-        [Microsoft.WindowsAzure.MobileServices.Version]
-        public string AzureVersion { get; set; }
 
         /// <summary>
         /// Gets or sets the date UTC.

@@ -2,32 +2,33 @@
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
-using CoffeeCups.Helpers;
-using CoffeeCups.Droid;
 
-[assembly:Dependency(typeof(Authentication))]
+using CoffeeCups.Droid;
+using CoffeeCups.Utils;
+
+[assembly:Dependency(typeof(AzureAuthentication))]
 namespace CoffeeCups.Droid
 {
     
-    public class Authentication : IAuthentication
+    public class AzureAuthentication : IAuthentication
     {
-        public async Task<MobileServiceUser> LoginAsync(MobileServiceClient client, MobileServiceAuthenticationProvider provider)
+        public async Task<bool> LoginAsync(IDataService dataService)
         {
             try
             {
-
+                var client = (dataService as AzureService).MobileService;
                 Settings.LoginAttempts++;
-                var user = await client.LoginAsync(Forms.Context, provider);
+                var user = await client.LoginAsync(Forms.Context, MobileServiceAuthenticationProvider.MicrosoftAccount);
                 Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
                 Settings.UserId = user?.UserId ?? string.Empty;
-                return user;
+                return true;
             }
             catch(Exception e)
             {
                 e.Data["method"] = "LoginAsync";
             }
 
-            return null;
+            return false;
         }
 
         public void ClearCookies()

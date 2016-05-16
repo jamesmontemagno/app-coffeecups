@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
-using CoffeeCups.Helpers;
+using CoffeeCups.Utils;
 using Xamarin.Forms;
 using CoffeeCups.UWP;
 
@@ -10,23 +10,24 @@ namespace CoffeeCups.UWP
 {
     public class Authentication : IAuthentication
     {
-        public async Task<MobileServiceUser> LoginAsync(MobileServiceClient client, MobileServiceAuthenticationProvider provider)
+        public async Task<bool> LoginAsync(IDataService dataService)
         {
             try
             {
-                var user = await client.LoginAsync(provider);
+                var client = (dataService as AzureService).MobileService;
+                var user = await client.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
 
                 Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
                 Settings.UserId = user?.UserId ?? string.Empty;
 
-                return user;
+                return true;
             }
             catch(Exception e)
             {
                 e.Data["method"] = "LoginAsync";
             }
 
-            return null;
+            return false;
         }
 
         public void ClearCookies()

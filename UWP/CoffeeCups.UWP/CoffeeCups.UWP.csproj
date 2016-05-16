@@ -128,6 +128,22 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CoffeeCups.DataObjects\CoffeeCups.AWSBackend\CoffeeCups.AWSBackend.csproj">
+      <Project>{bcf8e4ca-d6a5-4b5b-b7e9-a97ffbc0cbae}</Project>
+      <Name>CoffeeCups.AWSBackend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoffeeCups.DataObjects\CoffeeCups.AzureBackend\CoffeeCups.AzureBackend.csproj">
+      <Project>{2d7984fb-e9b3-42ed-a949-d288af85df21}</Project>
+      <Name>CoffeeCups.AzureBackend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoffeeCups.DataObjects\CoffeeCups.Data\CoffeeCups.Data.csproj">
+      <Project>{ec16b3c7-8e52-476d-a926-250d07a2ae25}</Project>
+      <Name>CoffeeCups.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoffeeCups.Utils\CoffeeCups.Utils.csproj">
+      <Project>{e7c17efc-5efc-448e-bdcd-d1a605bae461}</Project>
+      <Name>CoffeeCups.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CoffeeCups\CoffeeCups.csproj">
       <Project>{b27eadbd-71a4-4254-a571-13dc6211e904}</Project>
       <Name>CoffeeCups</Name>

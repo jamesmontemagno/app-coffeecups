@@ -25,7 +25,6 @@ namespace CoffeeCups.Droid
             catch(Exception e)
             {
                 e.Data["method"] = "LoginAsync";
-                Xamarin.Insights.Report(e);
             }
 
             return null;

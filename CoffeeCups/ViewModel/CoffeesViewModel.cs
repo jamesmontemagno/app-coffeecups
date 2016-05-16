@@ -130,7 +130,6 @@ namespace CoffeeCups
                     LoadingMessage = "Adding Coffee...";
                     IsBusy = true;
                 }
-                Xamarin.Insights.Track("CoffeeAdded");
 
                 var coffee = await azureService.AddCoffee(AtHome);
                 Coffees.Add(coffee);
@@ -140,7 +139,6 @@ namespace CoffeeCups
             {
                 Debug.WriteLine("OH NO!" + ex);
                 //This is okay because we can 
-                Xamarin.Insights.Report(ex);
             } 
             finally 
             {

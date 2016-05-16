@@ -25,8 +25,6 @@ namespace CoffeeCups.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            Xamarin.Insights.Initialize("4c9b7ee70e74ac06196f21599c67983461959028");
-            Xamarin.Insights.ForceDataTransmission = true;
             LoadApplication(new CoffeeCups.App());
         }
     }

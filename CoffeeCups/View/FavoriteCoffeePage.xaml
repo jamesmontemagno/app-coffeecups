@@ -7,7 +7,8 @@
 		<StackLayout Padding="10">
             <Label Text="Enter Favorite Coffee Shop:"/>
     		<Entry x:Name="EntryFavorite"/>
-    		<Button Text="Save" x:Name="ButtonSave" Clicked="SaveClicked"/>
+            <Button Text="Save" x:Name="ButtonSave" Clicked="SaveClicked"/>
+            <Button Text="Sync" x:Name="ButtonSync" Clicked="SyncClicked"/>
 			<ActivityIndicator x:Name="IndicatorIsBusy"/>
 		</StackLayout>
     </ContentPage.Content>

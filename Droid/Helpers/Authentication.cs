@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using CoffeeCups.Droid;
 using CoffeeCups.Utils;
 
-[assembly:Dependency(typeof(AzureAuthentication))]
+//[assembly:Dependency(typeof(AzureAuthentication))]
 namespace CoffeeCups.Droid
 {
     

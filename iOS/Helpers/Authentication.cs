@@ -6,9 +6,8 @@ using Xamarin.Forms;
 using CoffeeCups.iOS;
 using CoffeeCups.Utils;
 using System.Collections.Generic;
-using Facebook.LoginKit;
 
-[assembly:Dependency(typeof(AzureAuthentication))]
+//[assembly:Dependency(typeof(AzureAuthentication))]
 namespace CoffeeCups.iOS
 {
     public class AzureAuthentication : IAuthentication

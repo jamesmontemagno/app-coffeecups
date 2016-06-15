@@ -35,6 +35,9 @@ namespace CoffeeCups.AWSBackend
                 AWSConstants.Region // Region
             );
 
+            //credentialsProvider.AddLogin("api.twitter.com", Settings.AuthToken);
+            credentialsProvider.Clear();
+
             //Step 3: Create DynamoDB Client with Credentials
             dbClient = new AmazonDynamoDBClient(credentialsProvider, RegionEndpoint.USEast1);
 

@@ -168,6 +168,9 @@
     <Reference Include="AWSSDK.DynamoDBv2">
       <HintPath>..\packages\AWSSDK.DynamoDBv2.3.1.3.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\AWSSDK.DynamoDBv2.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Auth.Android">
+      <HintPath>..\Components\xamarin.auth-1.2.3.1\lib\android\Xamarin.Auth.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoffeeCups\CoffeeCups.csproj">
@@ -193,6 +196,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\Authentication.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Helpers\AWSAuthentication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -223,5 +227,11 @@
     <Analyzer Include="..\packages\AWSSDK.CognitoSync.3.1.1.0\analyzers\dotnet\cs\AWSSDK.CognitoSync.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.CognitoIdentity.3.1.0.7\analyzers\dotnet\cs\AWSSDK.CognitoIdentity.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.DynamoDBv2.3.1.3.0\analyzers\dotnet\cs\AWSSDK.DynamoDBv2.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamarin.auth">
+      <Version>1.2.3.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

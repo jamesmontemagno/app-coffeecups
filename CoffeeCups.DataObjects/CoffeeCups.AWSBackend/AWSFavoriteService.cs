@@ -4,6 +4,7 @@ using Amazon;
 using Amazon.CognitoIdentity;
 using Amazon.CognitoSync;
 using Amazon.CognitoSync.SyncManager;
+using CoffeeCups.Utils;
 
 namespace CoffeeCups.AWSBackend
 {
@@ -25,6 +26,8 @@ namespace CoffeeCups.AWSBackend
             );
 
             syncManager = new CognitoSyncManager(credentialsProvider, clientConfig);
+
+            credentialsProvider.AddLogin("api.twitter.com", Settings.AuthToken);
 
             dataset = syncManager.OpenOrCreateDataset("favs");
             dataset.OnSyncSuccess += (sender, e) =>

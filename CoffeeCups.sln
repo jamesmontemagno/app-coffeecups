@@ -1,19 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups", "CoffeeCups\CoffeeCups.csproj", "{B27EADBD-71A4-4254-A571-13DC6211E904}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.iOS", "CoffeeCups.iOS\CoffeeCups.iOS.csproj", "{25C2AF37-F78F-4817-91D5-B98252FF3312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.iOS", "iOS\CoffeeCups.iOS.csproj", "{25C2AF37-F78F-4817-91D5-B98252FF3312}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.Droid", "CoffeeCups.Droid\CoffeeCups.Droid.csproj", "{3FA9FA7A-A746-41C1-A0EB-316C0BAA4ACF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.Droid", "Droid\CoffeeCups.Droid.csproj", "{3FA9FA7A-A746-41C1-A0EB-316C0BAA4ACF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.UWP", "CoffeeCups.UWP\CoffeeCups.UWP.csproj", "{6C26713B-52CA-4373-A908-8995FA4A31AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.UWP", "UWP\CoffeeCups.UWP\CoffeeCups.UWP.csproj", "{6C26713B-52CA-4373-A908-8995FA4A31AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.UITests", "CoffeeCups.UITests\CoffeeCups.UITests.csproj", "{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.UITests", "UITests\CoffeeCups.UITests.csproj", "{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B8C5EC9B-79FA-4EEC-944A-4F16C3494E5C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoffeeCups.Shared", "CoffeeCups.Shared\CoffeeCups.Shared.shproj", "{CBCA0E96-D552-4218-A0BA-DC4CDADBC99A}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CoffeeCups.Shared\CoffeeCups.Shared.projitems*{25c2af37-f78f-4817-91d5-b98252ff3312}*SharedItemsImports = 4
+		CoffeeCups.Shared\CoffeeCups.Shared.projitems*{3fa9fa7a-a746-41c1-a0eb-316c0baa4acf}*SharedItemsImports = 4
+		CoffeeCups.Shared\CoffeeCups.Shared.projitems*{6c26713b-52ca-4373-a908-8995fa4a31ac}*SharedItemsImports = 4
+		CoffeeCups.Shared\CoffeeCups.Shared.projitems*{cbca0e96-d552-4218-a0ba-dc4cdadbc99a}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -35,37 +43,6 @@ Global
 		UITest|x86 = UITest|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|ARM.Build.0 = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|x64.Build.0 = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Debug|x86.Build.0 = Debug|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|ARM.ActiveCfg = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|ARM.Build.0 = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|iPhone.Build.0 = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|x64.ActiveCfg = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|x64.Build.0 = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|x86.ActiveCfg = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.Release|x86.Build.0 = Release|Any CPU
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|Any CPU.ActiveCfg = UITest|iPhone
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|ARM.ActiveCfg = UITest|iPhone
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|iPhone.ActiveCfg = UITest|iPhone
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|iPhone.Build.0 = UITest|iPhone
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|iPhoneSimulator.ActiveCfg = UITest|iPhone
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|x64.ActiveCfg = UITest|iPhone
-		{B27EADBD-71A4-4254-A571-13DC6211E904}.UITest|x86.ActiveCfg = UITest|iPhone
 		{25C2AF37-F78F-4817-91D5-B98252FF3312}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{25C2AF37-F78F-4817-91D5-B98252FF3312}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{25C2AF37-F78F-4817-91D5-B98252FF3312}.Debug|ARM.ActiveCfg = Debug|iPhone
@@ -207,6 +184,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8} = {B8C5EC9B-79FA-4EEC-944A-4F16C3494E5C}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

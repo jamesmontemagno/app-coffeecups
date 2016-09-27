@@ -43,41 +43,7 @@ namespace CoffeeCups.Helpers
 
         #endregion
 
-        #if DEBUG
-        public static bool NeedsSync
-        {
-            get { return true; }
-            set { }
-        }
-        #else
-        public static bool NeedsSync
-        {
-        get { return AppSettings.GetValueOrDefault<bool>(NeedsSyncKey, NeedsSyncDefault) || LastSync < DateTime.Now.AddDays(-1); }
-        set { AppSettings.AddOrUpdateValue<bool>(NeedsSyncKey, value); }
-
-        }
-        #endif
-
-        public static bool HasSyncedData
-        {
-            get { return AppSettings.GetValueOrDefault<bool>(HasSyncedDataKey, HasSyncedDataDefault); }
-            set { AppSettings.AddOrUpdateValue<bool>(HasSyncedDataKey, value); }
-
-        }
-
-        public static DateTime LastSync
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault<DateTime>(LastSyncKey, LastSyncDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue<DateTime>(LastSyncKey, value);
-            }
-        } 
-
-
+       
         public static string AuthToken
         {
             get
@@ -102,19 +68,6 @@ namespace CoffeeCups.Helpers
             }
         }
 
-        public static int LoginAttempts
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault<int>(LoginAttemptsKey, LoginAttemptsDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue<int>(LoginAttemptsKey, value);
-            }
-        }
-
-
         public static bool IsLoggedIn
         {
             get
@@ -125,9 +78,5 @@ namespace CoffeeCups.Helpers
                 return !string.IsNullOrWhiteSpace(UserId);
             }
         }
-
-
-
-
     }
 }

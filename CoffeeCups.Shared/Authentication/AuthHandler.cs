@@ -11,15 +11,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Diagnostics;
+using CoffeeCups.Helpers;
 
 namespace CoffeeCups.Authentication
 {
     class AuthHandler : DelegatingHandler
-    {
-        
-
-		public static MobileServiceAuthenticationProvider ProviderType =>
-			MobileServiceAuthenticationProvider.Twitter;
+    {   
 
         private static readonly SemaphoreSlim semaphore = new SemaphoreSlim(1);
         private static bool isReauthenticating = false;
@@ -35,7 +32,8 @@ namespace CoffeeCups.Authentication
                 if (isReauthenticating)
                     return response;
 
-                var client = DependencyService.Get<AzureService>().Client;
+                var service = DependencyService.Get<AzureService>();
+                var client = service.Client;
 
                 string authToken = client.CurrentUser.MobileServiceAuthenticationToken;
                 await semaphore.WaitAsync();
@@ -57,7 +55,7 @@ namespace CoffeeCups.Authentication
                     //Otherwise if refreshing the token failed or Facebook\Twitter is being used, prompt the user to log back in via the login screen
                     if (!gotNewToken)
                     {
-                        gotNewToken = await Login(client);
+                        gotNewToken = await service.LoginAsync();
                     }
                 }
                 catch (System.Exception e)
@@ -118,28 +116,7 @@ namespace CoffeeCups.Authentication
             return false;
         }
 
-        private async Task<bool> Login(IMobileServiceClient client)
-        {
-            var authentication = DependencyService.Get<IAuthentication>();
-            if (authentication == null)
-            {
-                throw new InvalidOperationException("Make sure the ServiceLocator has an instance of IAuthentication");
-            }
-
-            var accountType = ProviderType;
-			//var parameters = App.LoginParameters;
-            try
-            {
-                var user = await authentication.LoginAsync(client, accountType, null);
-                if (user != null)
-                    return true;
-            }
-            catch (System.Exception e)
-            {
-            }
-
-            return false;
-        }
+     
 
         private async Task<HttpRequestMessage> CloneRequest(HttpRequestMessage request)
         {

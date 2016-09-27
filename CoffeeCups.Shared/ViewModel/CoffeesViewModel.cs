@@ -115,28 +115,13 @@ namespace CoffeeCups
 
         }
 
-        public async Task<bool> LoginAsync()
+        public Task<bool> LoginAsync()
         {
             if (Settings.IsLoggedIn)
-                return true;
+                return Task.FromResult(true);
 
-            await azureService.Initialize();
 
-            var auth = DependencyService.Get<IAuthentication>();
-            var user = await auth.LoginAsync(azureService.Client, MobileServiceAuthenticationProvider.Twitter);
-
-            if (user == null)
-            {
-                await App.Current.MainPage.DisplayAlert("Login Error", "Unable to login, please try again", "OK");
-                return false;
-            }
-            else
-            {
-                Settings.AuthToken = user.MobileServiceAuthenticationToken;
-                Settings.UserId = user.UserId;
-            }
-
-            return true;
+            return azureService.LoginAsync();
         }
     }
 }

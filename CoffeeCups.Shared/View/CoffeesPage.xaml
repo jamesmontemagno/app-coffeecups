@@ -50,8 +50,17 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding TimeDisplay}" FontSize="16" Style="{DynamicResource ListItemTextStyle}" VerticalTextAlignment="Center"/>
-                            <Label Grid.Column="1" HorizontalOptions="End" FontSize="16" Text="{Binding AtHomeDisplay}" Style="{DynamicResource ListItemTextStyle}" TextColor="#979797" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding TimeDisplay}" 
+                                   FontSize="16" 
+                                   Style="{DynamicResource ListItemTextStyle}" 
+                                   VerticalTextAlignment="Center"/>
+                            <Label Grid.Column="1" 
+                                   HorizontalOptions="End" 
+                                   FontSize="16" 
+                                   Text="{Binding AtHomeDisplay}" 
+                                   Style="{DynamicResource ListItemTextStyle}" 
+                                   TextColor="#979797" 
+                                   VerticalTextAlignment="Center"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

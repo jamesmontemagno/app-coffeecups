@@ -1,5 +1,4 @@
 ﻿using System;
-using Humanizer;
 
 namespace CoffeeCups
 {
@@ -41,7 +40,7 @@ namespace CoffeeCups
         public string DateDisplay { get { return DateUtc.ToLocalTime().ToString("d"); } }
 
         [Newtonsoft.Json.JsonIgnore]
-        public string TimeDisplay { get { return DateUtc.ToLocalTime().ToString("t"); } }
+        public string TimeDisplay { get { return DateUtc.ToLocalTime().ToString("t") + " " + OS.ToString(); } }
 
         [Newtonsoft.Json.JsonIgnore]
         public string AtHomeDisplay { get { return MadeAtHome ? "Made At Home" : string.Empty; } }

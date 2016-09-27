@@ -1,6 +1,5 @@
 ﻿{
   "dependencies": {
-    "Humanizer": "1.37.7",
     "Microsoft.Azure.Mobile.Client": "3.0.1",
     "Microsoft.Azure.Mobile.Client.SQLiteStore": "3.0.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",

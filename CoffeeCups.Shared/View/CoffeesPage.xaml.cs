@@ -43,7 +43,11 @@ namespace CoffeeCups
             if (vm.Coffees.Count == 0 && Settings.IsLoggedIn)
                 vm.LoadCoffeesCommand.Execute(null);
             else
+            {
                 await vm.LoginAsync();
+                if (Settings.IsLoggedIn)
+                    vm.LoadCoffeesCommand.Execute(null);
+            }
         }
 
         protected override void OnDisappearing()

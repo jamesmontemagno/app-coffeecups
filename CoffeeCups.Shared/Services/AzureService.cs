@@ -1,4 +1,4 @@
-﻿#define AUTH
+//#define AUTH
 
 using System;
 using Microsoft.WindowsAzure.MobileServices;
@@ -21,11 +21,10 @@ namespace CoffeeCups
 {
     public class AzureService
     {
-      
-        public static bool UseAuth { get; set; } = true;
-        public MobileServiceClient Client { get; set; } = null;
 
-        private IMobileServiceSyncTable<CupOfCoffee> coffeeTable;
+        public MobileServiceClient Client { get; set; } = null;
+        IMobileServiceSyncTable<CupOfCoffee> coffeeTable;
+        public static bool UseAuth { get; set; } = false;
  
         public async Task Initialize()
         {

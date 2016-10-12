@@ -52,7 +52,9 @@ namespace CoffeeCups.iOS
 
             global::Xamarin.Forms.Forms.Init();
 
-            #if ENABLE_TEST_CLOUD
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+
+#if ENABLE_TEST_CLOUD
             Xamarin.Calabash.Start();
             //Mapping StyleId to iOS Labels
             Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {

@@ -16,7 +16,7 @@ namespace CoffeeCups
         AzureService azureService;
         public CoffeesViewModel()
         {
-            azureService = new AzureService();
+            azureService = DependencyService.Get<AzureService>();
         }
            
         public ObservableRangeCollection<CupOfCoffee> Coffees { get; } = new ObservableRangeCollection<CupOfCoffee>();
@@ -55,7 +55,7 @@ namespace CoffeeCups
             {
                 Debug.WriteLine("OH NO!" + ex);
 
-                await App.Current.MainPage.DisplayAlert("Sync Error", "Unable to sync coffees, you may be offline", "OK");
+                await Application.Current.MainPage.DisplayAlert("Sync Error", "Unable to sync coffees, you may be offline", "OK");
             } 
             finally 
             {

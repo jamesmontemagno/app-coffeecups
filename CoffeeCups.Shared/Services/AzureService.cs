@@ -28,11 +28,11 @@ namespace CoffeeCups
  
         public async Task Initialize()
         {
-            if (Client?.SyncContext?.IsInitialized ?? false)
-                return;
+            //check to see if the SyncContext is Initialized
+            
 
 
-            var appUrl = "https://ilovecoffee.azurewebsites.net";
+            var appUrl = "https://URL-HERE.azurewebsites.net";
 
 #if AUTH      
             Client = new MobileServiceClient(appUrl, new AuthHandler());
@@ -43,27 +43,20 @@ namespace CoffeeCups
             }
 #else
             //Create our client
-
-            Client = new MobileServiceClient(appUrl);
+            
 
 #endif
 
-            //InitialzeDatabase for path
-            var path = "syncstore.db";
-            path = Path.Combine(MobileServiceClient.DefaultDatabasePath, path);
-
+           
+            
             //setup our local sqlite store and intialize our table
-            var store = new MobileServiceSQLiteStore(path);
 
-            //Define table
-            store.DefineTable<CupOfCoffee>();
+            //Define tables
 
 
             //Initialize SyncContext
-            await Client.SyncContext.InitializeAsync(store);
 
             //Get our sync table that will call out to azure
-            coffeeTable = Client.GetSyncTable<CupOfCoffee>();
 
             
         }
@@ -72,12 +65,14 @@ namespace CoffeeCups
         {
             try
             {
-                if (!CrossConnectivity.Current.IsConnected)
-                    return;
+                //Check Connectivity and then try to sync.
 
-                await coffeeTable.PullAsync("allCoffee", coffeeTable.CreateQuery());
 
-                await Client.SyncContext.PushAsync();
+                //Pull latest coffee from server
+
+
+                //Push any local changes up to server.
+
             }
             catch (Exception ex)
             {
@@ -88,11 +83,13 @@ namespace CoffeeCups
 
         public async Task<IEnumerable<CupOfCoffee>> GetCoffees()
         {
-            //Initialize & Sync
+            //Initialize
             await Initialize();
-            await SyncCoffee();
 
-            return await coffeeTable.OrderBy(c => c.DateUtc).ToEnumerableAsync(); ;
+            //Sync Coffee
+
+            //Query coffees from the table.
+            return null;
             
         }
 
@@ -100,18 +97,17 @@ namespace CoffeeCups
         {
             await Initialize();
 
-            var coffee = new CupOfCoffee
-            {
-                DateUtc = DateTime.UtcNow,
-                MadeAtHome = atHome,
-                OS = Device.OS.ToString()
-            };
+            //Create a coffee to insert and sync
 
-            await coffeeTable.InsertAsync(coffee);
 
-            await SyncCoffee();
-            //return coffee
-            return coffee;
+            //Insert coffe LOCALLY into coffee table
+
+
+            //Attempt to sync coffee to the server
+
+
+            //Return the coffee that we just created.
+            return null;
         }
 
       

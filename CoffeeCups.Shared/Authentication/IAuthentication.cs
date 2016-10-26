@@ -11,7 +11,6 @@ namespace CoffeeCups.Authentication
     {
 		Task<MobileServiceUser> LoginAsync(IMobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> paramameters = null);
 		Task<bool> RefreshUser(IMobileServiceClient client);
-        void ClearCookies();
     }
 }
 #endif

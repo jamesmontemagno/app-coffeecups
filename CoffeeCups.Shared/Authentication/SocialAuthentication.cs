@@ -1,8 +1,4 @@
-﻿#define AZURE
-
-#if AZURE
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.WindowsAzure.MobileServices;
@@ -18,14 +14,18 @@ namespace CoffeeCups.Authentication
     public class SocialAuthentication : IAuthentication
     {
 
-#if __IOS__
+
         public Task<MobileServiceUser> LoginAsync(IMobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
         {
             try
             {
-
+#if __IOS__
 				return client.LoginAsync(GetController(), provider, parameters);
-                
+#elif __ANDROID__
+                return client.LoginAsync(Forms.Context, provider, parameters);
+#else
+                return client.LoginAsync(provider, parameters);
+#endif
             }
             catch (Exception e)
             {
@@ -34,76 +34,6 @@ namespace CoffeeCups.Authentication
 
             return null;
         }
-        
-        UIKit.UIViewController GetController()
-        {
-            var window = UIKit.UIApplication.SharedApplication.KeyWindow;
-            var root = window.RootViewController;
-            if (root == null)
-                return null;
-
-            var current = root;
-            while (current.PresentedViewController != null)
-            {
-                current = current.PresentedViewController;
-            }
-
-            return current;
-        }
-
-        public void ClearCookies()
-        {
-            var store = Foundation.NSHttpCookieStorage.SharedStorage;
-            var cookies = store.Cookies;
-
-            foreach (var c in cookies)
-            {
-                store.DeleteCookie(c);
-            }
-        }
-#elif __ANDROID__
-
-        public Task<MobileServiceUser> LoginAsync(IMobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
-        {
-            try
-            {
-                return client.LoginAsync(Forms.Context, provider, parameters);
-            }
-            catch { }
-
-            return null;
-        }
-
-        public void ClearCookies()
-        {
-            try
-            {
-                if ((int)global::Android.OS.Build.VERSION.SdkInt >= 21)
-                    global::Android.Webkit.CookieManager.Instance.RemoveAllCookies(null);
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-#else
-        public Task<MobileServiceUser> LoginAsync(IMobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
-        {
-            try
-            {
-                return client.LoginAsync(provider, parameters);
-            }
-            catch { }
-
-            return null;
-        }
-
-        public void ClearCookies()
-        {
-           
-        }
-#endif
-
 
         public virtual async Task<bool> RefreshUser(IMobileServiceClient client)
         {
@@ -126,6 +56,23 @@ namespace CoffeeCups.Authentication
 
             return false;
         }
+
+#if __IOS__
+        UIKit.UIViewController GetController()
+        {
+            var window = UIKit.UIApplication.SharedApplication.KeyWindow;
+            var root = window.RootViewController;
+            if (root == null)
+                return null;
+
+            var current = root;
+            while (current.PresentedViewController != null)
+            {
+                current = current.PresentedViewController;
+            }
+
+            return current;
+        }
+#endif
     }
 }
-#endif

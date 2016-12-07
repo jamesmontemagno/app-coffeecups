@@ -32,7 +32,7 @@ namespace CoffeeCups
                 return;
 
 
-            var appUrl = "https://ilovecoffee.azurewebsites.net";
+            var appUrl = "https://YOUR-BACKEND-URL-HERE.azurewebsites.net";
 
 #if AUTH      
             Client = new MobileServiceClient(appUrl, new AuthHandler());

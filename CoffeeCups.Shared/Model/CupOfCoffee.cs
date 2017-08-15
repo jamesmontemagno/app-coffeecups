@@ -8,10 +8,6 @@ namespace CoffeeCups
 
         [Newtonsoft.Json.JsonProperty("Id")]
         public string Id { get; set; }
-
-        [Microsoft.WindowsAzure.MobileServices.Version]
-        public string AzureVersion { get; set; }
-
         /// <summary>
         /// Gets or sets the user identifier.
         /// </summary>
@@ -32,6 +28,11 @@ namespace CoffeeCups
         public bool MadeAtHome{ get; set; }
 
         /// <summary>
+        /// Gets or sets the location of the coffee
+        /// </summary>
+        public string Location { get; set; }
+
+        /// <summary>
         /// Gets or sets the OS of the user
         /// </summary>
         /// <value>The OS</value>
@@ -45,7 +46,13 @@ namespace CoffeeCups
         public string TimeDisplay { get { return DateUtc.ToLocalTime().ToString("t") + " " + OS.ToString(); } }
 
         [Newtonsoft.Json.JsonIgnore]
-        public string AtHomeDisplay { get { return MadeAtHome ? "Made At Home" : string.Empty; } }
+        public string AtHomeDisplay { get { return MadeAtHome ? "Made At Home" : Location; } }
+
+
+
+        [Microsoft.WindowsAzure.MobileServices.Version]
+        public string AzureVersion { get; set; }
+
     }
 }
 

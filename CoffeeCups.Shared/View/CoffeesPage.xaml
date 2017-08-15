@@ -11,10 +11,11 @@
               RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <StackLayout Orientation="Horizontal" Padding="16" Spacing="16" BackgroundColor="#F2C500">
+            <StackLayout Orientation="Horizontal" Padding="8" Spacing="16" BackgroundColor="#F2C500">
                 <Label Text="Made at Home?"
                         TextColor="White" 
                         VerticalOptions="Center" 
@@ -24,16 +25,34 @@
                         <OnPlatform x:TypeArguments="x:Double" iOS="16" Android="16" WinPhone="12" />
                     </Label.FontSize>
                 </Label>
-                <Switch IsToggled="{Binding AtHome}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <Switch IsToggled="{Binding AtHome}" 
+                        HorizontalOptions="CenterAndExpand" 
+                        VerticalOptions="Center"/>
                 <Button Text="Add Coffee" 
                         Command="{Binding AddCoffeeCommand}" 
                         IsEnabled="{Binding IsNotBusy}" 
                         VerticalOptions="Center"
                         TextColor="White"
-                        BackgroundColor="#F2C500"/>
+                        BackgroundColor="#F2C500"
+                        BorderWidth="0"/>
+            </StackLayout>
+            <StackLayout  Grid.Row="1" Orientation="Horizontal" Padding="8,0,8,4" Spacing="16" 
+                         BackgroundColor="#F2C500">
+                <Label Text="Location: "
+                       VerticalOptions="End"
+                        TextColor="White" />
+                <Entry Text="{Binding Location}" HorizontalOptions="FillAndExpand">
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                             Binding="{Binding AtHome}"
+                             Value="true">
+                            <Setter Property="IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
             </StackLayout>
             <ListView 
-                Grid.Row="1"
+                Grid.Row="2"
                 GroupDisplayBinding="{Binding Key}"
                 IsGroupingEnabled="true"
                 HasUnevenRows ="true"
@@ -66,7 +85,7 @@
                 </DataTemplate>
              </ListView.ItemTemplate>
             </ListView>
-            <StackLayout Grid.Row="2" x:Name="OfflineStack" Padding="8" IsVisible="false" BackgroundColor="#F2C500">
+            <StackLayout Grid.Row="3" x:Name="OfflineStack" Padding="8" IsVisible="false" BackgroundColor="#F2C500">
                 <Label TextColor="White" Text="No Connection - Offline Mode" HorizontalOptions="Center" VerticalOptions="Center"/>
             </StackLayout>
         </Grid>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.iOS", "CoffeeCups.iOS\CoffeeCups.iOS.csproj", "{25C2AF37-F78F-4817-91D5-B98252FF3312}"
 EndProject
@@ -9,11 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.Droid", "CoffeeC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.UWP", "CoffeeCups.UWP\CoffeeCups.UWP.csproj", "{6C26713B-52CA-4373-A908-8995FA4A31AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeCups.UITests", "CoffeeCups.UITests\CoffeeCups.UITests.csproj", "{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B8C5EC9B-79FA-4EEC-944A-4F16C3494E5C}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoffeeCups.Shared", "CoffeeCups.Shared\CoffeeCups.Shared.shproj", "{CBCA0E96-D552-4218-A0BA-DC4CDADBC99A}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoffeeCups", "CoffeeCups.Shared\CoffeeCups.shproj", "{CBCA0E96-D552-4218-A0BA-DC4CDADBC99A}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -150,43 +146,9 @@ Global
 		{6C26713B-52CA-4373-A908-8995FA4A31AC}.UITest|x86.ActiveCfg = Release|x86
 		{6C26713B-52CA-4373-A908-8995FA4A31AC}.UITest|x86.Build.0 = Release|x86
 		{6C26713B-52CA-4373-A908-8995FA4A31AC}.UITest|x86.Deploy.0 = Release|x86
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|ARM.Build.0 = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|x64.Build.0 = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Debug|x86.Build.0 = Debug|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|ARM.ActiveCfg = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|ARM.Build.0 = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|iPhone.Build.0 = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|x64.ActiveCfg = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|x64.Build.0 = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|x86.ActiveCfg = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.Release|x86.Build.0 = Release|Any CPU
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|Any CPU.ActiveCfg = UITest|iPhone
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|ARM.ActiveCfg = UITest|iPhone
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|iPhone.ActiveCfg = UITest|iPhone
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|iPhone.Build.0 = UITest|iPhone
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|iPhoneSimulator.ActiveCfg = UITest|iPhone
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|x64.ActiveCfg = UITest|iPhone
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8}.UITest|x86.ActiveCfg = UITest|iPhone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6A8517EA-E91A-4C62-B151-FE5DF375B2A8} = {B8C5EC9B-79FA-4EEC-944A-4F16C3494E5C}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

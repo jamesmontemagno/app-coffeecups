@@ -44,5 +44,16 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>com.refractored.coffeecups</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>coffeecups</string>
+      </array>
+    </dict>
+  </array>
 </dict>
 </plist>

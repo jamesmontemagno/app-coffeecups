@@ -98,15 +98,12 @@ namespace CoffeeCups.Authentication
 
         private async Task<bool> RefreshToken(IMobileServiceClient client)
         {
-			var authentication = DependencyService.Get<IAuthentication>();
-			if (authentication == null)
-			{
-				throw new InvalidOperationException("Make sure the ServiceLocator has an instance of IAuthentication");
-			}
+			
 
             try
             {
-				return await authentication.RefreshUser(client);
+                await client.RefreshUserAsync();
+                return true;
             }
             catch (System.Exception e)
             {

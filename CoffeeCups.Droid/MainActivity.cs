@@ -6,28 +6,19 @@ using Xamarin.Forms.Platform.Android;
 
 namespace CoffeeCups.Droid
 {
-	[Activity (Label = "CoffeeCups", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (Label = "Coffee Cups", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
 
-            ToolbarResource = Resource.Layout.toolbar;
-            TabLayoutResource = Resource.Layout.tabs;
+            ToolbarResource = Resource.Layout.Toolbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
 
             base.OnCreate (bundle);
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-
-#if ENABLE_TEST_CLOUD
-            //Mapping StyleID to element content descriptions
-            Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) => {
-            if (!string.IsNullOrWhiteSpace(e.View.StyleId)) {
-            e.NativeView.ContentDescription = e.View.StyleId;
-            }
-            };
-#endif
 
             LoadApplication (new App ());
 		}

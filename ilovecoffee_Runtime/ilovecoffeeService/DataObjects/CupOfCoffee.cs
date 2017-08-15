@@ -28,6 +28,11 @@ namespace ilovecoffeeService.DataObjects
         public bool MadeAtHome { get; set; }
 
         /// <summary>
+        /// Gets or sets the location of the coffee
+        /// </summary>
+        public string Location { get; set; }
+
+        /// <summary>
         /// Gets or sets the OS of the user
         /// </summary>
         /// <value>The OS</value>

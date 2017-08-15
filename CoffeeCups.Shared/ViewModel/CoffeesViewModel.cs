@@ -6,8 +6,6 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using System.Linq;
 using CoffeeCups.Helpers;
-using Microsoft.WindowsAzure.MobileServices;
-using CoffeeCups.Authentication;
 
 namespace CoffeeCups
 {
@@ -29,7 +27,24 @@ namespace CoffeeCups
             set { SetProperty(ref loadingMessage, value); }
         }
 
-        ICommand  loadCoffeesCommand;
+
+        bool atHome;
+        public bool AtHome
+        {
+            get => atHome;
+            set => SetProperty(ref atHome, value);
+        }
+
+
+        string location;
+        public string Location
+        {
+            get => location;
+            set => SetProperty(ref location, value);
+        }
+
+
+        ICommand loadCoffeesCommand;
         public ICommand LoadCoffeesCommand =>
             loadCoffeesCommand ?? (loadCoffeesCommand = new Command(async () => await ExecuteLoadCoffeesCommandAsync())); 
 
@@ -77,13 +92,6 @@ namespace CoffeeCups
             CoffeesGrouped.ReplaceRange(groups);
         }
 
-        bool atHome;
-        public bool AtHome
-        {
-            get { return atHome; }
-            set { SetProperty(ref atHome, value); }
-        }
-
         ICommand  addCoffeeCommand;
         public ICommand AddCoffeeCommand =>
             addCoffeeCommand ?? (addCoffeeCommand = new Command(async () => await ExecuteAddCoffeeCommandAsync())); 
@@ -93,13 +101,21 @@ namespace CoffeeCups
             if(IsBusy || !(await LoginAsync()))
                 return;
 
-            try 
+            try
             {
+
+                if (string.IsNullOrWhiteSpace(Location) && !AtHome)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Needs Location", "Please enter a location before adding the coffee.", "OK");
+                    return;
+                }
                 LoadingMessage = "Adding Coffee...";
                 IsBusy = true;
                 
 
-                var coffee = await azureService.AddCoffee(AtHome);
+                var coffee = await azureService.AddCoffee(AtHome, location);
+                Location = string.Empty;
+                AtHome = false;
                 Coffees.Add(coffee);
                 SortCoffees();
             }

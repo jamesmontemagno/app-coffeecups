@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿//#define AUTH
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Controllers;
@@ -11,7 +12,9 @@ using System.Security.Claims;
 
 namespace ilovecoffeeService.Controllers
 {
+#if AUTH
     [Authorize]
+#endif
     public class CupOfCoffeeController : TableController<CupOfCoffee>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
@@ -38,12 +41,12 @@ namespace ilovecoffeeService.Controllers
         // GET tables/CupOfCoffee
         public IQueryable<CupOfCoffee> GetAllCupOfCoffee()
         {
-
+#if AUTH
             var sid = GetSid(User);
-
-            
-
-            return Query().Where(c => c.UserId == sid); 
+            return Query().Where(c => c.UserId == sid);
+#else
+            return Query();
+#endif
         }
 
         // GET tables/CupOfCoffee/48D68C86-6EA6-4C25-AA33-223FC9A27959
@@ -61,8 +64,10 @@ namespace ilovecoffeeService.Controllers
         // POST tables/CupOfCoffee
         public async Task<IHttpActionResult> PostCupOfCoffee(CupOfCoffee item)
         {
+#if AUTH
             var sid = GetSid(User);
             item.UserId = sid;
+#endif
 
             CupOfCoffee current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);

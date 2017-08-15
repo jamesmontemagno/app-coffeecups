@@ -1,14 +1,15 @@
 ﻿{
   "dependencies": {
-    "Microsoft.Azure.Mobile.Client": "3.0.2",
-    "Microsoft.Azure.Mobile.Client.SQLiteStore": "3.0.2",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Newtonsoft.Json": "9.0.1",
-    "Refractored.MvvmHelpers": "1.0.1",
-    "SQLitePCLRaw.bundle_green": "1.1.0",
-    "Xam.Plugin.Connectivity": "2.2.12",
-    "Xam.Plugins.Settings": "2.5.1",
-    "Xamarin.Forms": "2.3.2.127"
+    "Microsoft.Azure.Mobile.Client": "4.0.1",
+    "Microsoft.Azure.Mobile.Client.SQLiteStore": "4.0.1",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
+    "Newtonsoft.Json": "10.0.3",
+    "Refractored.MvvmHelpers": "1.3.0",
+    "SQLitePCLRaw.bundle_green": "1.1.8",
+    "SQLitePCLRaw.core": "1.1.8",
+    "Xam.Plugin.Connectivity": "3.0.2",
+    "Xam.Plugins.Settings": "3.0.1",
+    "Xamarin.Forms": "2.3.4.247"
   },
   "frameworks": {
     "uap10.0": {}

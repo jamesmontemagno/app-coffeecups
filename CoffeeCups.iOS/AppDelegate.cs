@@ -11,6 +11,7 @@ namespace CoffeeCups.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        public static Func<NSUrl, bool> ResumeWithURL;
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
 
@@ -54,19 +55,15 @@ namespace CoffeeCups.iOS
 
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
-#if ENABLE_TEST_CLOUD
-            Xamarin.Calabash.Start();
-            //Mapping StyleId to iOS Labels
-            Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
-                if (null != e.View.StyleId) {
-                    e.NativeView.AccessibilityIdentifier = e.View.StyleId;
-                }
-            };
-            #endif
 
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            return ResumeWithURL != null && ResumeWithURL(url);
         }
     }
 }

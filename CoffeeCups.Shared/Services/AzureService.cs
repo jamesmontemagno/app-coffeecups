@@ -1,4 +1,4 @@
-//#define AUTH
+#define AUTH
 
 using System;
 using Microsoft.WindowsAzure.MobileServices;
@@ -24,17 +24,22 @@ namespace CoffeeCups
 
         public MobileServiceClient Client { get; set; } = null;
         IMobileServiceSyncTable<CupOfCoffee> coffeeTable;
+
+#if AUTH
+        public static bool UseAuth { get; set; } = true;
+#else
         public static bool UseAuth { get; set; } = false;
- 
+#endif
+
         public async Task Initialize()
         {
             if (Client?.SyncContext?.IsInitialized ?? false)
                 return;
 
 
-            var appUrl = "https://YOUR-BACKEND-URL-HERE.azurewebsites.net";
+            var appUrl = "https://ENTER-APP-SERVICE-NAME.azurewebsites.net";
 
-#if AUTH      
+#if AUTH
             Client = new MobileServiceClient(appUrl, new AuthHandler());
 
             if (!string.IsNullOrWhiteSpace (Settings.AuthToken) && !string.IsNullOrWhiteSpace (Settings.UserId)) {
@@ -96,7 +101,7 @@ namespace CoffeeCups
             
         }
 
-        public async Task<CupOfCoffee> AddCoffee(bool atHome)
+        public async Task<CupOfCoffee> AddCoffee(bool atHome, string location)
         {
             await Initialize();
 
@@ -104,7 +109,8 @@ namespace CoffeeCups
             {
                 DateUtc = DateTime.UtcNow,
                 MadeAtHome = atHome,
-                OS = Device.OS.ToString()
+                OS = Device.RuntimePlatform,
+                Location = location ?? string.Empty
             };
 
             await coffeeTable.InsertAsync(coffee);
@@ -121,9 +127,21 @@ namespace CoffeeCups
 
             await Initialize();
 
-            var auth = DependencyService.Get<IAuthentication>();
-            var user = await auth.LoginAsync(Client, MobileServiceAuthenticationProvider.Twitter);
+            var provider = MobileServiceAuthenticationProvider.Twitter;
+            var uriScheme = "coffeecups";
+            
+            
+#if __ANDROID__
+            var user = await Client.LoginAsync(Forms.Context, provider, uriScheme);
 
+#elif __IOS__
+            CoffeeCups.iOS.AppDelegate.ResumeWithURL = url => url.Scheme == uriScheme && Client.ResumeWithURL(url);
+            var user = await Client.LoginAsync(GetController(), provider, uriScheme);
+            
+#else
+            var user = await Client.LoginAsync(provider, uriScheme);
+            
+#endif
             if (user == null)
             {
                 Settings.AuthToken = string.Empty;
@@ -142,6 +160,25 @@ namespace CoffeeCups
 
             return true;
         }
+
+
+#if __IOS__
+         UIKit.UIViewController GetController()
+        {
+            var window = UIKit.UIApplication.SharedApplication.KeyWindow;
+            var root = window.RootViewController;
+            if (root == null)
+                return null;
+
+            var current = root;
+            while (current.PresentedViewController != null)
+            {
+                current = current.PresentedViewController;
+            }
+
+            return current;
+        }
+#endif
     }
 }
     

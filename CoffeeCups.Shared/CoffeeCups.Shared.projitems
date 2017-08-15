@@ -11,8 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Authentication\AuthHandler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Authentication\SocialAuthentication.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Authentication\IAuthentication.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\CupOfCoffee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AzureService.cs" />

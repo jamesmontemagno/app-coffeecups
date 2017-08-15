@@ -1,4 +1,4 @@
-#define AUTH
+//#define AUTH
 
 using System;
 using Microsoft.WindowsAzure.MobileServices;

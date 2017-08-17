@@ -9,11 +9,15 @@ namespace CoffeeCups
     {
         public App()
         {
+#if __ANDROID__
             // The root page of your application
             if (Settings.IsLoggedIn)
                 GoToCoffee();
             else
                 MainPage = new LoginPage();
+#else
+             GoToCoffee();
+#endif
         }
 
         public static void GoToCoffee()

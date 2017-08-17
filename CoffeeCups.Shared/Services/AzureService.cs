@@ -1,4 +1,4 @@
-//#define AUTH
+#define AUTH
 
 using System;
 using Microsoft.WindowsAzure.MobileServices;
@@ -13,8 +13,7 @@ using CoffeeCups.Authentication;
 using CoffeeCups;
 using System.IO;
 using Plugin.Connectivity;
-
-
+using Newtonsoft.Json.Linq;
 
 [assembly: Dependency(typeof(AzureService))]
 namespace CoffeeCups
@@ -31,13 +30,14 @@ namespace CoffeeCups
         public static bool UseAuth { get; set; } = false;
 #endif
 
+
         public async Task Initialize()
         {
             if (Client?.SyncContext?.IsInitialized ?? false)
                 return;
 
 
-            var appUrl = "https://ENTER-APP-SERVICE-NAME.azurewebsites.net";
+            var appUrl = "https://ilovecoffee.azurewebsites.net";
 
 #if AUTH
             Client = new MobileServiceClient(appUrl, new AuthHandler());
@@ -54,14 +54,17 @@ namespace CoffeeCups
 #endif
 
             //InitialzeDatabase for path
-            var path = "syncstore.db";
-            path = Path.Combine(MobileServiceClient.DefaultDatabasePath, path);
 
-            //setup our local sqlite store and intialize our table
+            var path = "mydatabase2.db";
             var store = new MobileServiceSQLiteStore(path);
 
-            //Define table
+            //setup our local sqlite store and intialize our table
+
+            
             store.DefineTable<CupOfCoffee>();
+
+            //Define table
+
 
 
             //Initialize SyncContext
@@ -70,6 +73,7 @@ namespace CoffeeCups
             //Get our sync table that will call out to azure
             coffeeTable = Client.GetSyncTable<CupOfCoffee>();
 
+
             
         }
 
@@ -77,8 +81,10 @@ namespace CoffeeCups
         {
             try
             {
-                if (!CrossConnectivity.Current.IsConnected)
+               if(!CrossConnectivity.Current.IsConnected)
+                {
                     return;
+                }
 
                 await coffeeTable.PullAsync("allCoffee", coffeeTable.CreateQuery());
 
@@ -97,7 +103,7 @@ namespace CoffeeCups
             await Initialize();
             await SyncCoffee();
 
-            return await coffeeTable.OrderBy(c => c.DateUtc).ToEnumerableAsync(); ;
+            return await coffeeTable.OrderByDescending(c => c.DateUtc).ToEnumerableAsync();
             
         }
 
@@ -116,7 +122,9 @@ namespace CoffeeCups
             await coffeeTable.InsertAsync(coffee);
 
             await SyncCoffee();
-            //return coffee
+
+          
+           
             return coffee;
         }
 
@@ -129,10 +137,13 @@ namespace CoffeeCups
 
             var provider = MobileServiceAuthenticationProvider.Twitter;
             var uriScheme = "coffeecups";
-            
-            
+
+
 #if __ANDROID__
-            var user = await Client.LoginAsync(Forms.Context, provider, uriScheme);
+            //Android we are using facebook:
+            var token = new JObject();
+            token["access_token"] = Settings.FacebookAccessToken;
+            var user = await Client.LoginAsync(MobileServiceAuthenticationProvider.Facebook, token);
 
 #elif __IOS__
             CoffeeCups.iOS.AppDelegate.ResumeWithURL = url => url.Scheme == uriScheme && Client.ResumeWithURL(url);

@@ -56,6 +56,15 @@ namespace CoffeeCups.Helpers
             }
         }
 
+
+        public static string FacebookAccessToken
+        {
+            get =>  AppSettings.GetValueOrDefault(nameof(FacebookAccessToken), string.Empty);
+            
+            set =>  AppSettings.AddOrUpdateValue(nameof(FacebookAccessToken), value);
+            
+        }
+
         public static string UserId
         {
             get

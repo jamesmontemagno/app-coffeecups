@@ -102,7 +102,11 @@ namespace CoffeeCups.Authentication
 
             try
             {
+#if __ANDROID__
+                Xamarin.Facebook.AccessToken.RefreshCurrentAccessTokenAsync();
+#else
                 await client.RefreshUserAsync();
+#endif
                 return true;
             }
             catch (System.Exception e)

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">Hanselman.Android</string>
+	<string name="app_name">Coffee Cups</string>
+  <string name="app_id">605355546285789</string>
 </resources>

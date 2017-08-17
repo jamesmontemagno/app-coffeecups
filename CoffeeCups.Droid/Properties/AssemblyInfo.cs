@@ -26,3 +26,8 @@ using Android.App;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 
+[assembly: MetaData("com.facebook.sdk.ApplicationId", Value = "@string/app_id")]
+[assembly: MetaData("com.facebook.sdk.ApplicationName", Value = "@string/app_name")]
+
+[assembly: Permission(Name = Android.Manifest.Permission.Internet)]
+[assembly: Permission(Name = Android.Manifest.Permission.WriteExternalStorage)]

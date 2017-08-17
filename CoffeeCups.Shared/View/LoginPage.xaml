@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CoffeeCups.View;assembly:CoffeeCups"
+             x:Class="CoffeeCups.View.LoginPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" 
+                     VerticalOptions="CenterAndExpand"
+                     Padding="8">
+            <Label Text="Login for Coffee!" 
+                   VerticalOptions="Center"/>
+            <controls:FacebookLoginButton/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
